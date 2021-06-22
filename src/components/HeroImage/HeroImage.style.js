@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-   height: 600px;
+   height: 75vh;
    background-image: linear-gradient(
          to bottom,
          rgba(0, 0, 0, 0) 41%,

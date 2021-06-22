@@ -15,7 +15,7 @@ import Spinner from "./Spinner/Spinner";
 import SearchBar from "./Searchbar/SearchBar";
 
 const Home = (props) => {
-   const { state, loading, error } = useHomeFetch();
+   const { state, loading, error, setSearchTerm } = useHomeFetch();
    const { page, results, total_pages, total_results } = state;
 
    console.log(state);
@@ -30,12 +30,12 @@ const Home = (props) => {
             />
          )}
 
-         <SearchBar />
+         <SearchBar setSearchTerm={setSearchTerm}/>
 
          <Grid header="Popular This Week">
             {results.map((movie) => (
                <Thumb
-                  id={movie.id}
+                  key={movie.id}
                   poster={
                      movie.poster_path
                         ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.poster_path}`
