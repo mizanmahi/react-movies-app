@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-   height: 75vh;
+   height: 73vh;
    background-image: linear-gradient(
-         to bottom,
-         rgba(0, 0, 0, 0) 41%,
-         rgba(0, 0, 0, 0.65) 100%
-      ),
+            rgba(28,28,28,0.2),
+            rgba(28,28,28,0.2)
+        ),
       url(${(props) => props.image});
    background-size: 100%, cover;
    background-position: center;
@@ -47,10 +46,10 @@ export const Text = styled.div`
    }
 
    p {
-       font-size: var(--font-medium);
+       font-size: var(--font-large);
 
        @media only screen and (max-width: 45em){
-           font-size: var(--font-small);
+           font-size: var(--font-medium);
        }
    }
 

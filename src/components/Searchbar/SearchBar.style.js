@@ -20,15 +20,30 @@ export const Content = styled.div`
 
 
     img {
-        width: 40px;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 2vw;
+        width: 30px;
+        top: 14px;
+        left: 15px;
     }
 
    input {
-       width: 100%;
-       display: none;
+       font-size: var(--font-large);
+       position: absolute;
+       left: 0;
+       margin: 8px 0;
+       border: 0;
+       width: 95%;
+       background: transparent;
+       height: 40px;
+       color: var(--color-white);
+       padding-left: 60px;
+
+       :focus {
+           outline: none;
+       }
+
+       @media only screen and (max-width: 45em){
+           font-size: var(--font-medium);
+       }
    }
 `;
