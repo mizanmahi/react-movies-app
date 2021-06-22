@@ -36,7 +36,7 @@ export const Text = styled.div`
    display: grid;
    grid-template-rows: repeat(2, max-content);
    grid-row-gap: 10px;
-   color: var(--color-white);
+   color: #2525;
 
    h1 {
        font-size: var(--font-huge);
