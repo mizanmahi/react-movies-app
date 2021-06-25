@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 
         --font-huge: 2.5rem;
         --font-large: 1.5rem;
-        --font-medium: 1.2rem
+        --font-medium: 1.3rem
         --font-small: 1rem;
     }
 

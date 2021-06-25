@@ -7,9 +7,11 @@ export const Wrapper = styled.div`
 
    h1 {
       color: var(--color-midGrey);
+      margin: 20px 0;
 
       @media only screen and (max-width: 45em) {
          font-size: var(--font-large);
+         margin: 15px 0;
       }
    }
 `;

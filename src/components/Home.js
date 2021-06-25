@@ -13,13 +13,28 @@ import Grid from "./Grid/Grid";
 import Thumb from "./Thumb/Thumb";
 import Spinner from "./Spinner/Spinner";
 import SearchBar from "./Searchbar/SearchBar";
+import Button from "./Button/Button";
+
+import Footer from "./Footer/Footer";
 
 const Home = (props) => {
-   const { state, loading, error, setSearchTerm } = useHomeFetch();
+   // custom hook
+   const {
+      state,
+      loading,
+      error,
+      searchTerm,
+      setSearchTerm,
+      setIsLoadingMore,
+   } = useHomeFetch();
+
    const { page, results, total_pages, total_results } = state;
 
    console.log(state);
    const heroMovie = results[0];
+
+   if(error) return <div>Something went wrong!!</div>;
+
    return (
       <>
          {heroMovie && (
@@ -30,9 +45,15 @@ const Home = (props) => {
             />
          )}
 
-         <SearchBar setSearchTerm={setSearchTerm}/>
+         <SearchBar setSearchTerm={setSearchTerm} />
 
-         <Grid header="Popular This Week">
+         <Grid
+            header={
+               searchTerm
+                  ? `Search Results for "${searchTerm}"`
+                  : "Popular Movies"
+            }
+         >
             {results.map((movie) => (
                <Thumb
                   key={movie.id}
@@ -47,7 +68,12 @@ const Home = (props) => {
             ))}
          </Grid>
 
-         <Spinner />
+         {loading && <Spinner />}
+         {state.page < state.total_pages && !loading && (
+            <Button text="Show More Movies" clickHandler={() => setIsLoadingMore(true)} />
+         )}
+
+         <Footer />
       </>
    );
 };

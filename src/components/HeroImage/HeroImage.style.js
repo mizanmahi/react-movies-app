@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-   height: 73vh;
+   height: 600px;
    background-image: linear-gradient(
             rgba(28,28,28,0.2),
             rgba(28,28,28,0.2)
         ),
       url(${(props) => props.image});
    background-size: 100%, cover;
-   background-position: center;
+   background-position: top center;
    position: relative;
    animation: animateHeroImage 1s;
 
