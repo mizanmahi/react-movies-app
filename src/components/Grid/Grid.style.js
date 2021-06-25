@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-   max-width: var(--maxWidth);
-   margin: 0 auto;
    padding: 0 20px;
 
    h1 {
@@ -17,9 +15,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 2rem;
-
+   width: 100%;
+   margin: 0 auto;
+   max-width: var(--maxWidth);
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   grid-gap: 2rem;
+   grid-row-gap: ${({isActor}) => isActor ? "3rem" : "2rem"};
 `;

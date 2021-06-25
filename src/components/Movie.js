@@ -5,10 +5,11 @@ import { useParams } from "react-router";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 
 // components
-import Grid from "./Grid/Grid";
 import Spinner from "./Spinner/Spinner";
 import HeaderSecondary from "./HeaderSecondary/HeaderSecondary";
 import MovieInfo from "./MovieInfo/MovieInfo";
+import MovieInfoBar from "./MovieInfoBar/MovieInfoBar";
+import Actor from "./Actor/Actor";
 
 // hook
 import { useMovieFetch } from "../hooks/useMovieFetch";
@@ -20,11 +21,13 @@ const Movie = (props) => {
    const { movieId } = useParams();
    const { state: movie, loading, error } = useMovieFetch(movieId);
 
-   if(loading) return <Spinner />
+   if (loading) return <Spinner />;
    return (
       <>
-      <HeaderSecondary movieTitle={movie.title}/>
-      <MovieInfo movie={movie}/>
+         <HeaderSecondary movieTitle={movie.title} />
+         <MovieInfo movie={movie} />
+         <MovieInfoBar movie={movie} />
+         <Actor title="Casts" actors={movie.cast}/>
       </>
    );
 };

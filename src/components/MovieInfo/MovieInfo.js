@@ -47,10 +47,10 @@ const MovieInfo = ({ movie }) => {
                               : ""
                            : ""}
                      </h3>
-                     {movie.directors &&
+                    <p> {movie.directors &&
                         movie.directors.map((director) => (
-                           <p key={director.credit_id}>{director.name}</p>
-                        ))}
+                           <span key={director.credit_id}>{director.name}  </span>
+                        ))}</p>
                   </div>
                </div>
             </Text>
