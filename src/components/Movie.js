@@ -1,33 +1,49 @@
 // routing
 import { useParams } from "react-router";
+// hook
+import { useMovieFetch } from "../hooks/useMovieFetch";
 
 // config
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../config";
 
 // components
 import Spinner from "./Spinner/Spinner";
+import Actor from "./Actor/Actor";
 import HeaderSecondary from "./HeaderSecondary/HeaderSecondary";
 import MovieInfo from "./MovieInfo/MovieInfo";
 import MovieInfoBar from "./MovieInfoBar/MovieInfoBar";
-import Actor from "./Actor/Actor";
+import Grid from "./Grid/Grid";
 
-// hook
-import { useMovieFetch } from "../hooks/useMovieFetch";
-
-// image
+//image
 import NoImage from "../images/no_image.jpg";
 
-const Movie = (props) => {
+const Movie = () => {
    const { movieId } = useParams();
    const { state: movie, loading, error } = useMovieFetch(movieId);
+   console.log(movie);
 
    if (loading) return <Spinner />;
+   if (error) return <div>Something Went wrong!</div>;
    return (
       <>
          <HeaderSecondary movieTitle={movie.title} />
          <MovieInfo movie={movie} />
          <MovieInfoBar movie={movie} />
-         <Actor title="Casts" actors={movie.cast}/>
+         <Grid header="Casts">
+            {movie.cast ?
+               movie.cast.map((actor) => (
+                  <Actor
+                     key={actor.cast_id}
+                     name={actor.name}
+                     character={actor.character}
+                     imageUrl={
+                        actor.profile_path
+                           ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
+                           : NoImage
+                     }
+                  />
+               )) : <Spinner/>}
+         </Grid>
       </>
    );
 };

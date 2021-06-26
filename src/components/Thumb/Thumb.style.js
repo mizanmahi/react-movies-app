@@ -5,7 +5,7 @@ export const Image = styled.img`
     height: 100%;
     max-width: 720px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: all .3s;
     animation: animateThumb .5s;
     cursor: pointer;
@@ -25,16 +25,3 @@ export const Image = styled.img`
     }
 `;
 
-export const ActorDetails = styled.div`
-    background: var(--color-darkGrey);
-    padding: 10px 5px;
-    text-align: center ;
-    border-radius: 0 0 10px 10px;
-    transform: translateY(-50px);
-    h3 {
-        color: var(--color-white);
-    }
-    p {
-        color: var(--color-white);
-    }
-`;
