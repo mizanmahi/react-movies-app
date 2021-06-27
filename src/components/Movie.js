@@ -13,6 +13,7 @@ import HeaderSecondary from "./HeaderSecondary/HeaderSecondary";
 import MovieInfo from "./MovieInfo/MovieInfo";
 import MovieInfoBar from "./MovieInfoBar/MovieInfoBar";
 import Grid from "./Grid/Grid";
+import Footer from "./Footer/Footer";
 
 //image
 import NoImage from "../images/no_image.jpg";
@@ -44,6 +45,7 @@ const Movie = () => {
                   />
                )) : <Spinner/>}
          </Grid>
+         <Footer />
       </>
    );
 };

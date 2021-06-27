@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 // config
-import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
+import { BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 
 // hooks
 import { useHomeFetch } from '../hooks/useHomeFetch';
@@ -22,7 +22,7 @@ const Home = () => {
     // custom hook
     const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } = useHomeFetch();
 
-    const { page, results, total_pages, total_results } = state;
+    const { page, results, total_pages } = state;
 
     console.log(state);
     const heroMovie = results[0];
