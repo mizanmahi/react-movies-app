@@ -36,8 +36,19 @@ export const useMovieFetch = (movieId) => {
          }
       };
 
+      const sessionData = sessionStorage.getItem(movieId);
+      if(sessionData){
+         setState(JSON.parse(sessionData));
+         setLoading(false);
+         return;
+      }
+
       fetchMovie(movieId);
    }, [movieId]);
+
+   useEffect(() => {
+      sessionStorage.setItem(movieId, JSON.stringify(state))
+   }, [movieId, state])
 
    return {
       state,
