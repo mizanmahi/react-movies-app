@@ -14,3 +14,8 @@ export const convertMoney = money => {
   });
   return formatter.format(money);
 };
+
+export const getSessionData = (sessionDataKey) => {
+    const sessionData = sessionStorage.getItem(sessionDataKey);
+    return sessionData ? JSON.parse(sessionData) : null;
+}
