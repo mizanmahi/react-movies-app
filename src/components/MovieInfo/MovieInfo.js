@@ -47,11 +47,19 @@ const MovieInfo = ({ movie }) => {
                               : ""
                            : ""}
                      </h3>
-                    <p> {movie.directors &&
-                        movie.directors.map((director) => (
-                           <span key={director.credit_id}>{director.name}  </span>
-                        ))}</p>
+                     <p>
+                        {movie.directors &&
+                           movie.directors.map((director) => (
+                              <span key={director.credit_id}>
+                                 {director.name}{" "}
+                              </span>
+                           ))}
+                     </p>
                   </div>
+               </div>
+               <div className="releaseYear">
+                  <h3>Release Year</h3>
+                  <p>{movie.release_date}</p>
                </div>
             </Text>
          </Content>

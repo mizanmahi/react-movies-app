@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { Wrapper } from "./Button.style";
 
 const Button = ({ text, clickHandler }) => {
@@ -6,6 +8,11 @@ const Button = ({ text, clickHandler }) => {
          {text}
       </Wrapper>
    );
+};
+
+Button.prototypes = {
+   text: PropTypes.string,
+   clickHandler: PropTypes.func,
 };
 
 export default Button;

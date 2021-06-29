@@ -11,7 +11,7 @@ const Actor = ({ name, character, imageUrl }) => {
    );
 };
 
-Actor.prototypes = {
+Actor.propTypes = {
    name: PropTypes.string,
    character: PropTypes.string,
    imageUrl: PropTypes.string,

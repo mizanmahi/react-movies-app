@@ -1,5 +1,7 @@
-import { Wrapper, Content } from "./HeaderSecondary.style";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
+import { Wrapper, Content } from "./HeaderSecondary.style";
 
 const HeaderSecondary = ({ movieTitle }) => {
    return (
@@ -13,6 +15,10 @@ const HeaderSecondary = ({ movieTitle }) => {
          </Content>
       </Wrapper>
    );
+};
+
+HeaderSecondary.propTypes = {
+   movieTitle: PropTypes.string,
 };
 
 export default HeaderSecondary;
