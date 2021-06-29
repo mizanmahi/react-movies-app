@@ -11,8 +11,6 @@ import NoImage from "../../images/no_image.jpg";
 import { Wrapper, Content, Text } from "./MovieInfo.style";
 
 const MovieInfo = ({ movie }) => {
-   console.log(movie.directors);
-
    return (
       <Wrapper
          backdrop={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.backdrop_path}`}

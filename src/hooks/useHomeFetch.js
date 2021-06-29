@@ -47,12 +47,10 @@ export const useHomeFetch = () => {
       if (!searchTerm) {
          const sessionStorageData = getSessionData("sessionState");
          if (sessionStorageData) {
-            console.log("grabbing from sessionStorage");
             setState(sessionStorageData);
             return;
          }
       }
-      console.log("grabbing from API");
 
       setState(initialState);
       fetchMovies(1, searchTerm);

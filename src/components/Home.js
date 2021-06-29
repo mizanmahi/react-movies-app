@@ -24,7 +24,6 @@ const Home = () => {
 
     const { page, results, total_pages } = state;
 
-    console.log(state);
     const heroMovie = results[0];
 
     if (error) return <div>Something went wrong!!</div>;

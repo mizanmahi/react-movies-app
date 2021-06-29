@@ -43,4 +43,49 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+    .not-found {
+        background: var(--color-midGrey);
+        text-align: center;
+        height: calc(100vh - 80px);
+        padding: 20px;
+        
+        img {
+            max-width: 70%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            
+        }
+        a:link, a:visited {
+            color: var(--color-white);
+            padding: 1rem 1.5rem;
+            background: var(--color-darkGrey);
+            display: inline-block;
+            margin-top: 100px;
+            text-decoration: none;
+            font-size: var(--font-large);
+            font-weight: 700;
+            box-shadow: 0 10px 15px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            transition: all .3s;
+
+            &:hover,
+            &:active {
+                background: var(--color-lightGrey);
+                color: var(--color-darkGrey);
+            }
+
+            @media only screen and (max-width: 45em) {
+                font-size: var(--font-medium);
+                font-weight: 500;
+                padding: .8rem 1.3rem;
+
+            }
+
+        }
+        
+       
+
+    }
+
 `;
